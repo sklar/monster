@@ -13,8 +13,8 @@
     color: $heading-color;
     font-weight: 400;
     margin: {
-        bottom: rhythm-get();
-        top: rhythm-get(1);
+        bottom: rhythm-get(1);
+        top: rhythm-get(2);
     }
 }
 
@@ -31,13 +31,12 @@
 %head--1 {
     @include font-size(
         $size-to: nth($base-type-scale, 1) * $base-font-size,
-        $lines: 1.5
     );
 
-    margin: {
-        bottom: rhythm-get(0.75);
-        top: rhythm-get(1.5);
-    }
+    // margin: {
+    //     bottom: rhythm-get(0.75);
+    //     top: rhythm-get(1.5);
+    // }
 }
 
 /**
@@ -47,13 +46,12 @@
 %head--2 {
     @include font-size(
         $size-to: nth($base-type-scale, 2) * $base-font-size,
-        $lines: 1.25
     );
 
-    margin: {
-        bottom: rhythm-get(0.75);
-        top: rhythm-get(1.5);
-    }
+    // margin: {
+    //     bottom: rhythm-get(0.75);
+    //     top: rhythm-get(1.5);
+    // }
 }
 
 /**
@@ -63,11 +61,10 @@
 %head--3 {
     @include font-size(
         $size-to: nth($base-type-scale, 3) * $base-font-size,
-        $lines: 1.125
     );
 
     margin: {
-        top: rhythm-get(1.25);
+        top: rhythm-get(1);
     }
 }
 
@@ -80,9 +77,9 @@
         $size-to: nth($base-type-scale, 4) * $base-font-size
     );
 
-    font-weight: 400;
+    font-weight: 500;
     margin: {
-        bottom: rhythm-get(0.25);
+        bottom: rhythm-get(0.5);
     }
 }
 
@@ -97,7 +94,7 @@
 
     font-weight: 500;
     margin: {
-        bottom: rhythm-get(0.25);
+        bottom: rhythm-get(0.5);
     }
     text-transform: uppercase;
 }

@@ -20,7 +20,7 @@ $app-features: (
 // Set app indent.
 $app-indent: (
     // print: 10mm,
-    screen: 20px,
+    screen: 5vh 5vw,
     // speech: ,
 );
 
@@ -30,8 +30,8 @@ $app-index: 1;
 // Set app size.
 $app-size: (
     screen: (
-        max: 1600px,
-        // max: 1280px,
+        // max: 1600px,
+        max: 1000px,
         min: 320px,
     ),
 );
@@ -47,24 +47,6 @@ $app-head-background: #3a3a45;
 $app-head-color: #fff;
 
 /**
- * App sidebar.
- */
-
-// Set app sidebar background.
-$app-sidebar-background: #4e4e59;
-
-// Set app sidebar color.
-$app-sidebar-color: #fff;
-
-// Set app sidebar size.
-$app-sidebar-size: (
-    // 2 * $navigation-item-indent-x + $navigation-item-icon-size
-    collapse: calc(2 * 20px + 1.25em),
-    max: 220px,
-    min: 200px,
-);
-
-/**
  * App foot.
  */
 
@@ -74,32 +56,6 @@ $app-foot-border-color: #b0b0b5;
 // Set app foot border size.
 $app-foot-border-size: 1px;
 
-/**
- * App console.
- */
-
-// Set app console background.
-$app-console-background: #d8d8da;
-
-/**
- * App title.
- */
-
-// Set app title font size.
-$app-title-font-size: 15px;
-
-// Set app title font weight.
-$app-title-font-weight: 400;
-
-/**
- * App logo.
- */
-
-// Set app logo height.
-$app-logo-height: 25px;
-
-// Set app logo width.
-$app-logo-width: 100px;
 
 // =============================================================================
 // ComponentName helpers
