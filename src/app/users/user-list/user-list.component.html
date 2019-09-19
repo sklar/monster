@@ -1,1 +1,100 @@
-<p>user-list works!</p>
+<div class="app__rack --top u-justify --end">
+    <a class="u-text --upper"
+       color="primary"
+       mat-flat-button
+       routerLink="../add">
+        Add New User
+    </a>
+</div>
+
+<table mat-table
+       [dataSource]="dataSource">
+
+    <!-- column: Last Name -->
+    <ng-container matColumnDef="lastName">
+        <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef>
+            Last Name
+        </th>
+        <td mat-cell
+            *matCellDef="let user">
+            {{ user.lastName }}
+        </td>
+    </ng-container>
+
+    <!-- column: First Name -->
+    <ng-container matColumnDef="firstName">
+        <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef>
+            First Name
+        </th>
+        <td mat-cell
+            *matCellDef="let user">
+            {{ user.firstName }}
+        </td>
+    </ng-container>
+
+    <!-- column: E-mail -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef>
+            E-mail
+        </th>
+        <td mat-cell
+            *matCellDef="let user">
+            <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+        </td>
+    </ng-container>
+
+    <!-- column: Phone -->
+    <ng-container matColumnDef="phone">
+        <th mat-header-cell
+            *matHeaderCellDef>
+            Phone
+        </th>
+        <td mat-cell
+            *matCellDef="let user">
+            <a [href]="'tel:' + user.email">{{ user.phone }}</a>
+        </td>
+    </ng-container>
+
+    <!-- column: CTA's -->
+    <ng-container matColumnDef="cta">
+        <th mat-header-cell
+            *matHeaderCellDef>
+        </th>
+        <td mat-cell
+            *matCellDef="let user">
+            <div class="btn-group --compact --right">
+                <a class="btn-group__item"
+                   color="primary"
+                   mat-stroked-button
+                   [routerLink]="'../' + user.id">
+                    Edit
+                </a>
+                <button class="btn-group__item"
+                        color="warn"
+                        disabled
+                        mat-stroked-button>
+                    Remove
+                </button>
+            </div>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row
+        *matHeaderRowDef="displayedColumns sticky: true; ">
+    </tr>
+    <tr class="cur --pointer"
+        mat-row
+        *matRowDef="let user; columns: displayedColumns; ">
+    </tr>
+</table>
+
+<mat-paginator showFirstLastButtons
+               [length]="dataSource.data.length"
+               [pageSizeOptions]="[25, 50, 100]">
+</mat-paginator>

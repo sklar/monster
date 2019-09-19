@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    OnInit,
+    ViewChild,
+} from '@angular/core';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
+
+import { USERS, User, UserService } from '../shared/user.service';
 
 @Component({
     selector: 'app-user-list',
     templateUrl: './user-list.component.html',
     styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent implements OnInit, AfterViewInit {
 
-    constructor() { }
+    @ViewChild(MatPaginator, {static: true})
+        paginator: MatPaginator;
 
-    ngOnInit() {
+    dataSource: MatTableDataSource<User>;
+    displayedColumns = [
+        'firstName',
+        'lastName',
+        'email',
+        'phone',
+        'cta',
+    ];
+
+    constructor(
+        private userService: UserService,
+    ) {
+        this.dataSource = new MatTableDataSource<User>([]);
+        this.dataSource.data = USERS;
     }
+
+    ngAfterViewInit() {
+        this.dataSource.paginator = this.paginator;
+    }
+
+    ngOnInit() { }
 
 }
