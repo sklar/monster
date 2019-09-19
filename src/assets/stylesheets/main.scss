@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ * Main.
+ */
+
+// =============================================================================
+// Main
+// =============================================================================
+
+// Imports settings, libs, frameworks, layers, helpers and compoments.
+// ORDER DOES MATTER!
+
+// Libs, Frameworks
+// =============================================================================
+
+// @import "mathsass";
+@import "~normalize.css/normalize.css";
+
+// Settings
+// =============================================================================
+
+@import "layers/base.settings";
+
+@import "components/app.settings";
+// @import "components/button.group.settings";
+@import "components/heading.settings";
+
+// Helpers
+// =============================================================================
+
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/extends";
+
+// Layers
+// =============================================================================
+
+@import "layers/base";
+
+// Components
+// =============================================================================
+
+@import "components/app";
+// @import "components/button.group";
+@import "components/heading";
+
+// Layers
+// =============================================================================
+
+// Because ORDER DOES MATTER!
+
+// @import "layers/spacing";
+@import "layers/utility";

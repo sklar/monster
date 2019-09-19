@@ -1,0 +1,254 @@
+/**
+ * Component App.
+ *
+ * @requires {function}    rhythm-get
+ * @requires {mixin}       size
+ */
+
+// =============================================================================
+// App
+// =============================================================================
+
+.app {
+    // grid-template: {
+    //     areas:
+    //         "head    head"
+    //         "sidebar body";
+    //     columns:
+    //         map-get($app-sidebar-size, collapse)
+    //         minmax(60%, auto);
+    //     rows:
+    //         60px
+    //         auto;
+    // }
+    // min-height: 100vh;
+
+    // @media (min-width: nth($app-breaks, 1)) {
+    //     display: grid;
+    //     height: 100vh;
+    // }
+    // @media (min-width: nth($app-breaks, 2)) {
+    //     grid-template-columns:
+    //         minmax(
+    //             map-get($app-sidebar-size, min),
+    //             map-get($app-sidebar-size, max)
+    //         )
+    //         minmax(60%, auto);
+    // }
+
+    @if map-get($app-features, debug) {
+        background-color: LEMONCHIFFON;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// App region(s)
+// =============================================================================
+
+%app__region-x {
+    padding: {
+        left: map-get($app-indent, screen);
+        right: map-get($app-indent, screen);
+    }
+}
+
+%app__region-y {
+    padding: {
+        bottom: map-get($app-indent, screen);
+        top: map-get($app-indent, screen);
+    }
+}
+
+// App head
+// =============================================================================
+
+.app__head {
+    // @extend %app__region-x;
+
+    // $indent: 0.5 * map-get($app-indent, screen);
+
+    // align-items: center;
+    // background-color: $app-head-background;
+    // color: $app-head-color;
+    // display: flex;
+    // grid-area: head;
+    // justify-content: space-between;
+    // padding: {
+    //     bottom: $indent;
+    //     top: $indent;
+    // }
+
+    // a {
+    //     color: inherit;
+    // }
+
+    // @media (min-width: nth($app-breaks, 1)) {
+    //     padding: {
+    //         bottom: 0;
+    //         top: 0;
+    //     }
+    // }
+
+    @if map-get($app-features, debug) {
+        background-color: rgba(TOMATO, 0.85);
+    }
+}
+
+// App body
+// =============================================================================`
+
+/**
+ * 1. Position the App foot to the bottom.
+ */
+
+.app__body {
+    // @extend %app__region-x;
+    // @extend %app__region-y;
+
+    // display: flex;      /* 1 */
+    // grid-area: body;
+    // overflow-y: auto;
+
+    // @if map-get($app-features, debug) {
+    //     background-color: AQUAMARINE;
+    // }
+}
+
+// App foot
+// =============================================================================
+
+.app__foot {
+    // @extend %app__region-x;
+    // @extend %app__region-y;
+
+    // border-top: $app-foot-border-size solid $app-foot-border-color;
+    // margin: {
+    //     top: 2 * map-get($app-indent, screen);
+    // }
+    // text-align: center;
+
+    // @if map-get($app-features, debug) {
+    //     background-color: rgba(TOMATO, 0.85);
+    // }
+}
+
+// App container
+// =============================================================================
+
+/**
+ * 1. Position the App foot to the bottom.
+ */
+
+.app__container {
+    display: flex;                  /* 1 */
+    flex: 1;                        /* 1 */
+    flex-flow: column;              /* 1 */
+    justify-content: space-between; /* 1 */
+    max-width: map-fetch($app-size, screen, max);
+    margin: 0 auto;
+
+    h1 {
+        margin-top: rhythm-get();
+    }
+
+    @if map-get($app-features, debug) {
+        background-color: rgba(SALMON, 0.85);
+    }
+}
+
+// App console
+// =============================================================================
+
+/**
+ * 1. We need to set hight `z-index` to beat MatTables with sticky headers :fyeah:
+ */
+
+// .app__console {
+//     @extend %app__region-x;
+
+//     $indent: map-get($app-indent, screen);
+
+//     background-color: $app-console-background;
+//     margin: {
+//         // bottom: (-1) * $indent;
+//         left: (-1) * $indent;
+//         right: (-1) * $indent;
+//         top: (-1) * $indent;
+//     }
+//     // padding-bottom: $indent;
+//     padding-top: $indent;
+//     position: sticky;
+//     top: (-1) * $indent;
+//     // z-index: $app-index + 1; /* 1 */
+//     z-index: 101;            /* 1 */
+// }
+
+// App rack
+// =============================================================================
+
+.app__rack {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * App rack, bottom.
+ */
+
+.app__rack {
+    &.--bottom {
+        padding-top: 1rem;
+    }
+}
+
+/**
+ * App rack, top.
+ */
+
+.app__rack {
+    &.--top {
+        padding-bottom: 1rem;
+    }
+}

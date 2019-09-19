@@ -1,0 +1,122 @@
+/**
+ * Component Button/Group.
+ */
+
+// =============================================================================
+// Button group
+// =============================================================================
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    %btn-group__item {
+        margin-bottom: $button-group-gutter;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Button group, centered buttons.
+ */
+
+.btn-group {
+    &.--center {
+        justify-content: center;
+
+        %btn-group__item {
+            margin: {
+                left: 0.5 * $button-group-gutter;
+                right: 0.5 * $button-group-gutter;
+            }
+        }
+    }
+}
+
+/**
+ * Button group, compact.
+ */
+
+.btn-group {
+    &.--compact {
+        %btn-group__item {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/**
+ * Button group, tight.
+ */
+
+.btn-group {
+    &.--tight {
+        %btn-group__item {
+            margin-bottom: 0.5 * $button-group-gutter;
+        }
+    }
+}
+
+/**
+ * Button group, buttons aligned left.
+ */
+
+.btn-group {
+    &.--left {
+        justify-content: flex-start;
+
+        %btn-group__item {
+            margin-right: $button-group-gutter;
+        }
+    }
+}
+
+/**
+ * Button group, buttons aligned right.
+ */
+
+.btn-group {
+    &.--right {
+        justify-content: flex-end;
+
+        %btn-group__item {
+            margin-left: $button-group-gutter;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Button group item
+// =============================================================================
+
+%btn-group__item {}
+
+.btn-group__item {
+    @extend %btn-group__item;
+}
