@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "bump": "npm run bump:patch",
     "bump:major": "npm version major -m 'Bump v%s'",
     "bump:minor": "npm version minor -m 'Bump v%s'",
