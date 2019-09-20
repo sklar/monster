@@ -18,13 +18,25 @@ export const USERS: User[] = data;
 })
 export class UserService {
 
-    constructor() { }
+    private users: User[];
 
-    addUser() {}
+    constructor() {
+        this.users = [
+            ...USERS,
+        ].reverse();
+    }
 
-    getUser() {}
+    addUser(user: User) {
+        // this.users.unshift(user);
+    }
 
-    getUsers() {}
+    getUser(userId: number): User {
+        return this.users.find(user => user.id === userId);
+    }
+
+    getUsers(): User[] {
+        return this.users;
+    }
 
     removeUser() {}
 
