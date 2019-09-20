@@ -1,0 +1,16 @@
+/**
+ * Component Edit User.
+ *
+ * @requires {function}    rhythm-get
+ * @requires component
+ */
+
+@import "component";
+
+// =============================================================================
+// Edit User
+// =============================================================================
+
+.btn-group {
+    margin-top: rhythm-get(2);
+}

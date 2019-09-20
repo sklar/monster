@@ -1,1 +1,26 @@
-<p>edit-user works!</p>
+<ng-container *ngIf="user; else error">
+
+    <h2 class="u-text --center">
+        {{ user.firstName + ' ' + user.lastName }}
+    </h2>
+
+    <app-user-form [user]="user"></app-user-form>
+
+</ng-container>
+
+
+<ng-template #error>
+    <div class="u-text --center">
+        <h2>Ooops, unknown user</h2>
+        <h3>¯\_(ツ)_/¯</h3>
+
+        <p class="btn-group --center">
+            <a class="btn-group__item --large u-text --upper"
+               color="accent"
+               mat-stroked-button
+               routerLink="..">
+                Back to Users
+            </a>
+        </p>
+    </div>
+</ng-template>

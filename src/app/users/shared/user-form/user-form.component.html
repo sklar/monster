@@ -1,0 +1,101 @@
+<form autocomplete="off"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit(form)">
+
+    <input type="hidden"
+           formControlName="id">
+
+    <div data-grid>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input type="text"
+                       placeholder="Enter first name"
+                       autocomplete="foo"
+                       required
+                       formControlName="firstName"
+                       matInput>
+                <mat-hint>At least 3 characters</mat-hint>
+                <mat-error *ngIf="form.get('firstName').hasError('required')">
+                    Provide a name please!
+                </mat-error>
+                <mat-error *ngIf="form.get('firstName').hasError('minlength')">
+                    C'mon, write something longer!
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input type="text"
+                       placeholder="Enter last name"
+                       autocomplete="foo"
+                       required
+                       formControlName="lastName"
+                       matInput>
+                <mat-hint>At least 3 characters</mat-hint>
+                <mat-error *ngIf="form.get('lastName').hasError('required')">
+                    Provide a name please!
+                </mat-error>
+                <mat-error *ngIf="form.get('lastName').hasError('minlength')">
+                    C'mon, write something longer!
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Company</mat-label>
+                <input type="text"
+                       placeholder="Enter company name"
+                       autocomplete="foo"
+                       formControlName="company"
+                       matInput>
+            </mat-form-field>
+        </p>
+    </div>
+    <div data-grid>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input type="email"
+                       placeholder="Enter e-mail address"
+                       autocomplete="foo"
+                       required
+                       formControlName="email"
+                       matInput>
+                <mat-hint>[a-z0-9.@]*</mat-hint>
+                <mat-error *ngIf="form.get('email').hasError('required')">
+                    Provide an e-mail address please!
+                </mat-error>
+                <mat-error *ngIf="form.get('email').hasError('minlength')">
+                    Oops, wrong pattern!
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input type="tel"
+                       placeholder="Enter phone number"
+                       autocomplete="foo"
+                       formControlName="phone"
+                       matInput>
+            </mat-form-field>
+        </p>
+    </div>
+
+    <p class="btn-group --center">
+        <a class="btn-group__item --large u-text --upper"
+           mat-flat-button
+           routerLink="..">
+            Back to Users
+        </a>
+        <button class="btn-group__item --large u-text --upper"
+                color="accent"
+                mat-flat-button
+                [disabled]="false">
+            Submit User
+        </button>
+    </p>
+
+</form>

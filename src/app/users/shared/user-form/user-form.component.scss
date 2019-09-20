@@ -1,0 +1,32 @@
+/**
+ * Component User Form.
+ *
+ * @requires {function}    rhythm-get
+ * @requires component
+ */
+
+@import "component";
+
+// =============================================================================
+// User Form
+// =============================================================================
+
+/**
+ * Grid.
+ */
+
+[data-grid] {
+
+    --grid-gap-row: #{rhythm-get()};
+    --grid-sizing: auto-fill;
+
+    margin-bottom: rhythm-get();
+
+    p {
+        margin: 0;
+    }
+
+    & + .btn-group {
+        margin-top: rhythm-get(2);
+    }
+}
