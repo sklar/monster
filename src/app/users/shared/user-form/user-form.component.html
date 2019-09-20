@@ -90,6 +90,13 @@
            routerLink="..">
             Back to Users
         </a>
+        <a class="btn-group__item --large u-text --upper"
+           color="warn"
+           mat-flat-button
+           (click)="onRemove(form.get('id').value)"
+           *ngIf="type == 'update'">
+            Remove User
+        </a>
         <button class="btn-group__item --large u-text --upper"
                 color="accent"
                 mat-flat-button

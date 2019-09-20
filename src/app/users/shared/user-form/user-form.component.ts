@@ -34,6 +34,13 @@ export class UserFormComponent implements OnInit {
         }
     }
 
+    onRemove(userId: number) {
+        const user = this.userService.getUser(userId);
+        this.userService.removeUser(user);
+
+        this.router.navigate(['../list'], {relativeTo: this.route});
+    }
+
     onSubmit(form: FormGroup) {
         if (true || form.status === 'VALID') {
             if (this.type === 'add') {
