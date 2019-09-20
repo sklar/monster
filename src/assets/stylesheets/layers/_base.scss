@@ -57,7 +57,19 @@ body {
 }
 
 body {
-    background-color: $base-background;
+    background: {
+        color: $base-background;
+        image:
+            url("../wave@primary.svg"),
+            url("../wave@secondary.svg"),
+        ;
+        position:
+            50% 30vh,
+            50% 10vh,
+        ;
+        repeat: no-repeat;
+        size: cover;
+    }
     color: $base-color;
 
     -webkit-print-color-adjust: exact; /* 2 */
