@@ -1,6 +1,6 @@
 <div class="app__rack --top u-justify --end">
-    <a class="u-text --upper"
-       color="primary"
+    <a class="--large u-text --upper"
+       color="accent"
        mat-flat-button
        routerLink="../add">
         Add New User
@@ -9,19 +9,6 @@
 
 <table mat-table
        [dataSource]="dataSource">
-
-    <!-- column: Last Name -->
-    <ng-container matColumnDef="lastName">
-        <th mat-header-cell
-            mat-sort-header
-            *matHeaderCellDef>
-            Last Name
-        </th>
-        <td mat-cell
-            *matCellDef="let user">
-            {{ user.lastName }}
-        </td>
-    </ng-container>
 
     <!-- column: First Name -->
     <ng-container matColumnDef="firstName">
@@ -36,28 +23,49 @@
         </td>
     </ng-container>
 
-    <!-- column: E-mail -->
-    <ng-container matColumnDef="email">
+    <!-- column: Last Name -->
+    <ng-container matColumnDef="lastName">
         <th mat-header-cell
             mat-sort-header
             *matHeaderCellDef>
-            E-mail
+            Last Name
         </th>
         <td mat-cell
             *matCellDef="let user">
-            <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+            {{ user.lastName }}
         </td>
     </ng-container>
 
-    <!-- column: Phone -->
-    <ng-container matColumnDef="phone">
+    <!-- column: Company -->
+    <ng-container matColumnDef="company">
         <th mat-header-cell
+            mat-sort-header
             *matHeaderCellDef>
-            Phone
+            Company
         </th>
         <td mat-cell
             *matCellDef="let user">
-            <a [href]="'tel:' + user.email">{{ user.phone }}</a>
+            {{ user.company }}
+        </td>
+    </ng-container>
+
+    <!-- column: Contact -->
+    <ng-container matColumnDef="contact">
+        <th mat-header-cell
+            *matHeaderCellDef>
+            Contact
+        </th>
+        <td class="u-text --compact"
+            mat-cell
+            *matCellDef="let user">
+            <a class="lnk --reverse u-block u-word --wrap u-font --small"
+               [href]="'mailto:' + user.email">
+                {{ user.email }}
+            </a>
+            <a class="lnk --reverse u-block u-word --wrap u-font --small"
+               [href]="'tel:' + user.email">
+                {{ user.phone }}
+            </a>
         </td>
     </ng-container>
 
@@ -69,16 +77,16 @@
         <td mat-cell
             *matCellDef="let user">
             <div class="btn-group --compact --right">
-                <a class="btn-group__item"
+                <a class="btn-group__item --small"
                    color="primary"
-                   mat-stroked-button
-                   [routerLink]="'../' + user.id">
+                   mat-flat-button
+                   [routerLink]="['../', user.id]">
                     Edit
                 </a>
-                <button class="btn-group__item"
+                <button class="btn-group__item --small"
                         color="warn"
                         disabled
-                        mat-stroked-button>
+                        mat-flat-button>
                     Remove
                 </button>
             </div>
@@ -88,8 +96,7 @@
     <tr mat-header-row
         *matHeaderRowDef="displayedColumns sticky: true; ">
     </tr>
-    <tr class="cur --pointer"
-        mat-row
+    <tr mat-row
         *matRowDef="let user; columns: displayedColumns; ">
     </tr>
 </table>

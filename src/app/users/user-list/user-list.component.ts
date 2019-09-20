@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 
-import { USERS, User, UserService } from '../shared/user.service';
+import { User, UserService } from '../shared/user.service';
 
 @Component({
     selector: 'app-user-list',
@@ -20,10 +20,10 @@ export class UserListComponent implements OnInit, AfterViewInit {
 
     dataSource: MatTableDataSource<User>;
     displayedColumns = [
-        'firstName',
         'lastName',
-        'email',
-        'phone',
+        'firstName',
+        'company',
+        'contact',
         'cta',
     ];
 
@@ -31,7 +31,7 @@ export class UserListComponent implements OnInit, AfterViewInit {
         private userService: UserService,
     ) {
         this.dataSource = new MatTableDataSource<User>([]);
-        this.dataSource.data = USERS;
+        this.dataSource.data = userService.getUsers();
     }
 
     ngAfterViewInit() {
