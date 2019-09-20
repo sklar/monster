@@ -22,7 +22,7 @@ export class UserListComponent implements OnInit, AfterViewInit {
         'firstName',
         'company',
         'contact',
-        'cta',
+        'action',
     ];
 
     constructor(

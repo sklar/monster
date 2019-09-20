@@ -23,6 +23,20 @@
 }
 
 /**
+ * Button.
+ */
+
+[data-action] {
+    width: 12em;
+}
+
+.btn-group__item {
+    &:nth-child(1) {
+        margin-left: 0;
+    }
+}
+
+/**
  * Wrapper.
  */
 
@@ -30,6 +44,17 @@
     max-height: 60vh;
     overflow-y: auto;
     position: relative;
+}
+
+/**
+ * Table.
+ */
+
+.mat-table {
+    [class*="action"],
+    [class*="contact"] {
+        width: 25%;
+    }
 }
 
 /**

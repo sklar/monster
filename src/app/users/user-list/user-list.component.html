@@ -12,6 +12,7 @@
     <div>
         <a class="--large u-text --upper"
            color="accent"
+           data-action="addNewUser"
            mat-flat-button
            routerLink="../add">
             Add New User
@@ -97,7 +98,7 @@
         </ng-container>
 
         <!-- column: CTA's -->
-        <ng-container matColumnDef="cta">
+        <ng-container matColumnDef="action">
             <th mat-header-cell
                 *matHeaderCellDef>
             </th>
