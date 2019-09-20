@@ -1,0 +1,16 @@
+/**
+ * Component Not Found.
+ *
+ * @requires {function}    rhythm-get
+ * @requires component
+ */
+
+@import "component";
+
+// =============================================================================
+// Not Found
+// =============================================================================
+
+.btn-group {
+    margin-top: rhythm-get(2);
+}
