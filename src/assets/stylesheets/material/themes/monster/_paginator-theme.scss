@@ -1,0 +1,21 @@
+/**
+ * Paginator theme.
+ *
+ * param {Map} $theme
+ */
+
+@mixin monster-paginator-theme($theme: ()) { }
+
+/**
+ * Paginator typography.
+ *
+ * param {Map} $conf
+ */
+
+@mixin monster-paginator-typography($conf: ()) {
+
+    .mat-paginator {
+        font-size: 0.9rem;
+    }
+
+}

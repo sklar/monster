@@ -1,0 +1,27 @@
+/**
+ * Tooltip theme.
+ *
+ * param {Map} $theme
+ */
+
+@mixin monster-tooltip-theme($theme: ()) {
+
+    .mat-tooltip {}
+
+}
+
+/**
+ * Tooltip typography.
+ *
+ * param {Map} $conf
+ */
+
+@mixin monster-tooltip-typography($conf: ()) {
+
+    .mat-tooltip {
+        font: {
+            size: 0.8rem;
+        }
+    }
+
+}

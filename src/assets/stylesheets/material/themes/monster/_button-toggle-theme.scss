@@ -1,0 +1,33 @@
+/**
+ * Button toggle theme.
+ *
+ * param {Map} $theme
+ */
+
+@mixin monster-button-toggle-theme($theme: ()) {
+
+    [class*="toggle"] {
+        flex-wrap: wrap;
+    }
+
+}
+
+/**
+ * Button toggle typography.
+ *
+ * param {Map} $conf
+ */
+
+@mixin monster-button-toggle-typography($conf: ()) {
+
+    [class*="toggle"] {
+        font-weight: 500;
+    }
+
+    .mat-button-toggle-label-content[class][class] {
+        font-size: 0.9rem;
+        line-height: 36px;
+        white-space: nowrap;
+    }
+
+}

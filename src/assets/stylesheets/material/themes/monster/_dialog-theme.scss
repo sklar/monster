@@ -1,0 +1,58 @@
+/**
+ * Dialog theme.
+ *
+ * param {Map} $theme
+ */
+
+@mixin monster-dialog-theme($theme: ()) {
+
+    .mat-dialog-container {
+        color: inherit;
+    }
+
+    .mat-dialog-title {
+        background-color: #fff;
+        padding-bottom: 0.75em;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+
+        &[class] {
+            margin: 0;
+        }
+    }
+
+    .mat-dialog-content {}
+
+    .mat-dialog-actions {
+        &[class][class] {
+            margin-bottom: -16px;
+            padding: {
+                bottom: 8px;
+                top: 16px;
+            }
+        }
+    }
+
+}
+
+/**
+ * Dialog typography.
+ *
+ * param {Map} $conf
+ */
+
+@mixin monster-dialog-typography($conf: ()) {
+
+    .mat-dialog-title {
+        // @include mat-typography-level-to-styles($conf, display-1);
+
+        font: {
+            size: 1.728rem;
+            weight: 400;
+        }
+        line-height: 1.2;
+        margin: 0;
+    }
+
+}

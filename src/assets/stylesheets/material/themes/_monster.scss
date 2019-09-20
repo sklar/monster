@@ -1,0 +1,118 @@
+/**
+ * Monster theme.
+ */
+
+// =============================================================================
+// Monster theme
+// =============================================================================
+
+@import "~@angular/material/theming";
+
+@import "monster/button-theme";
+// @import "monster/button-toggle-theme";
+@import "monster/dialog-theme";
+@import "monster/form-field-theme";
+@import "monster/paginator-theme";
+@import "monster/table-theme";
+@import "monster/tooltip-theme";
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$monster-primary: mat-palette($mat-teal);
+$monster-accent:  mat-palette($mat-deep-orange);
+
+// The warn palette is optional (defaults to red).
+$monster-warn:  mat-palette($mat-pink);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$monster-theme: mat-light-theme($monster-primary, $monster-accent, $monster-warn);
+
+// Typography config.
+$monster-config: mat-typography-config(
+    $font-family: "Roboto Mono, Helvetica, sans-serif",
+);
+
+
+@mixin monster-material-theme() {
+
+    @include monster-button-theme();
+    // @include monster-button-toggle-theme();
+    @include monster-dialog-theme();
+    @include monster-form-field-theme();
+    @include monster-paginator-theme();
+    @include monster-table-theme();
+    @include monster-tooltip-theme();
+
+}
+
+@mixin monster-material-config($conf: $monster-config) {
+
+    @include monster-button-typography();
+    // @include monster-button-toggle-typography();
+    @include monster-dialog-typography();
+    @include monster-form-field-typography();
+    @include monster-paginator-typography();
+    @include monster-table-typography();
+    @include monster-tooltip-typography();
+
+}
+
+
+// =============================================================================
+
+@mixin angular-material-theme($theme) {
+
+    @include mat-core-theme($theme);
+    // @include mat-autocomplete-theme($theme);
+    // @include mat-badge-theme($theme);
+    // @include mat-bottom-sheet-theme($theme);
+    @include mat-button-theme($theme);
+    // @include mat-button-toggle-theme($theme);
+    // @include mat-card-theme($theme);
+    // @include mat-checkbox-theme($theme);
+    // @include mat-chips-theme($theme);
+    @include mat-table-theme($theme);
+    // @include mat-datepicker-theme($theme);
+    @include mat-dialog-theme($theme);
+    // @include mat-divider-theme($theme);
+    // @include mat-expansion-panel-theme($theme);
+    @include mat-form-field-theme($theme);
+    // @include mat-grid-list-theme($theme);
+    // @include mat-icon-theme($theme);
+    @include mat-input-theme($theme);
+    // @include mat-list-theme($theme);
+    // @include mat-menu-theme($theme);
+    @include mat-paginator-theme($theme);
+    // @include mat-progress-bar-theme($theme);
+    // @include mat-progress-spinner-theme($theme);
+    // @include mat-radio-theme($theme);
+    // @include mat-select-theme($theme);
+    // @include mat-sidenav-theme($theme);
+    // @include mat-slide-toggle-theme($theme);
+    // @include mat-slider-theme($theme);
+    // @include mat-stepper-theme($theme);
+    @include mat-sort-theme($theme);
+    // @include mat-tabs-theme($theme);
+    // @include mat-toolbar-theme($theme);
+    @include mat-tooltip-theme($theme);
+    // @include mat-tree-theme($theme);
+    // @include mat-snack-bar-theme($theme);
+
+}
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+@include angular-material-theme($monster-theme);
+@include angular-material-typography($monster-config);
+
+
+// =============================================================================
+
+@include monster-material-theme();
+@include monster-material-config($monster-config);

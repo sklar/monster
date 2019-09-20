@@ -1,32 +1,23 @@
 /**
- * Main.
+ * Component.
+ * Essentials to faciliate App components.
  */
 
 // =============================================================================
-// Main
+// Component
 // =============================================================================
 
 // Imports settings, libs, frameworks, layers, helpers and compoments.
 // ORDER DOES MATTER!
-
-// Libs, Frameworks
-// =============================================================================
-
-// @import "mathsass";
-@import "~normalize.css/normalize.css";
-@import "material/themes/monster";
 
 // Settings
 // =============================================================================
 
 @import "layers/base.settings";
 
-@import "components/app.settings";
-@import "components/cursor.settings";
-@import "components/button.group.settings";
-@import "components/grid.settings";
-@import "components/heading.settings";
-@import "components/link.settings";
+// Libs, Frameworks
+// =============================================================================
+
 
 // Helpers
 // =============================================================================
@@ -38,22 +29,14 @@
 // Layers
 // =============================================================================
 
-@import "layers/base";
+// @import "layers/supercoolayer";
 
 // Components
 // =============================================================================
 
-@import "components/app";
-@import "components/cursor";
-@import "components/button.group";
-@import "components/grid";
-@import "components/heading";
-@import "components/link";
+// @import "components/whaaaaam";
 
 // Layers
 // =============================================================================
 
-// Because ORDER DOES MATTER!
-
-// @import "layers/spacing";
-@import "layers/utility";
+// @import "layers/anothergamechanger";

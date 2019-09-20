@@ -8,8 +8,10 @@
  * @requires {placeholder} %head--3
  * @requires {placeholder} %head--4
  * @requires {placeholder} %head--5
+ * @requires {placeholder} %link
  * @requires {placeholder} %rhythm
  * @requires heading
+ * @requires link
  */
 
 // =============================================================================
@@ -105,7 +107,13 @@ hr {
 // =============================================================================
 
 a {
-    color: TOMATO;
+    @extend %lnk !optional;
+}
+
+abbr {
+    &[title] {
+        text-decoration: none;
+    }
 }
 
 b,

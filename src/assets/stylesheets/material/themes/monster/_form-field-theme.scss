@@ -1,0 +1,29 @@
+/**
+ * Tooltip theme.
+ *
+ * param {Map} $theme
+ */
+
+@mixin monster-form-field-theme($theme: ()) {
+
+    .mat-form-field {
+        width: 100%;
+    }
+
+    .mat-form-field-outline {
+        background-color: rgba(WHITE, 0.25);
+    }
+
+}
+
+/**
+ * Tooltip typography.
+ *
+ * param {Map} $conf
+ */
+
+@mixin monster-form-field-typography($conf: ()) {
+
+    .mat-form-field {}
+
+}

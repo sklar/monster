@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/assets/stylesheets/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/stylesheets"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -94,9 +98,13 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/assets/stylesheets/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/stylesheets"
+              ]
+            },
             "scripts": []
           }
         },
