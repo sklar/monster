@@ -32,6 +32,14 @@ export class UserListComponent implements OnInit, AfterViewInit {
         this.update();
     }
 
+    applyFilter(filterValue: string ) {
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+
+        if (this.dataSource.paginator) {
+            this.dataSource.paginator.firstPage();
+        }
+    }
+
     ngAfterViewInit() {
         this.dataSource.paginator = this.paginator;
     }

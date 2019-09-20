@@ -1,10 +1,22 @@
-<div class="app__rack --top u-justify --end">
-    <a class="--large u-text --upper"
-       color="accent"
-       mat-flat-button
-       routerLink="../add">
-        Add New User
-    </a>
+<div class="app__rack --top u-align">
+    <mat-form-field appearance="outline">
+        <input type="text"
+               placeholder="Filter.."
+               autocomplete="off"
+               autofocus
+               matInput
+               (keyup)="applyFilter($event.target.value)">
+        <mat-hint>Filter all User fields by typing</mat-hint>
+    </mat-form-field>
+
+    <div>
+        <a class="--large u-text --upper"
+           color="accent"
+           mat-flat-button
+           routerLink="../add">
+            Add New User
+        </a>
+    </div>
 </div>
 
 <div class="wrap">
