@@ -7,101 +7,103 @@
     </a>
 </div>
 
-<table mat-table
-       [dataSource]="dataSource">
+<div class="wrap">
+    <table mat-table
+           [dataSource]="dataSource">
 
-    <!-- column: First Name -->
-    <ng-container matColumnDef="firstName">
-        <th mat-header-cell
-            mat-sort-header
-            *matHeaderCellDef>
-            First Name
-        </th>
-        <td mat-cell
-            *matCellDef="let user">
-            {{ user.firstName }}
-        </td>
-    </ng-container>
+        <!-- column: First Name -->
+        <ng-container matColumnDef="firstName">
+            <th mat-header-cell
+                mat-sort-header
+                *matHeaderCellDef>
+                First Name
+            </th>
+            <td mat-cell
+                *matCellDef="let user">
+                {{ user.firstName }}
+            </td>
+        </ng-container>
 
-    <!-- column: Last Name -->
-    <ng-container matColumnDef="lastName">
-        <th mat-header-cell
-            mat-sort-header
-            *matHeaderCellDef>
-            Last Name
-        </th>
-        <td mat-cell
-            *matCellDef="let user">
-            {{ user.lastName }}
-        </td>
-    </ng-container>
+        <!-- column: Last Name -->
+        <ng-container matColumnDef="lastName">
+            <th mat-header-cell
+                mat-sort-header
+                *matHeaderCellDef>
+                Last Name
+            </th>
+            <td mat-cell
+                *matCellDef="let user">
+                {{ user.lastName }}
+            </td>
+        </ng-container>
 
-    <!-- column: Company -->
-    <ng-container matColumnDef="company">
-        <th mat-header-cell
-            mat-sort-header
-            *matHeaderCellDef>
-            Company
-        </th>
-        <td mat-cell
-            *matCellDef="let user">
-            {{ user.company }}
-        </td>
-    </ng-container>
+        <!-- column: Company -->
+        <ng-container matColumnDef="company">
+            <th mat-header-cell
+                mat-sort-header
+                *matHeaderCellDef>
+                Company
+            </th>
+            <td mat-cell
+                *matCellDef="let user">
+                {{ user.company }}
+            </td>
+        </ng-container>
 
-    <!-- column: Contact -->
-    <ng-container matColumnDef="contact">
-        <th mat-header-cell
-            *matHeaderCellDef>
-            Contact
-        </th>
-        <td class="u-text --compact"
-            mat-cell
-            *matCellDef="let user">
-            <a class="lnk --reverse u-block u-word --wrap u-font --small"
-               [href]="'mailto:' + user.email">
-                {{ user.email }}
-            </a>
-            <a class="lnk --reverse u-block u-word --wrap u-font --small"
-               [href]="'tel:' + user.email">
-                {{ user.phone }}
-            </a>
-        </td>
-    </ng-container>
-
-    <!-- column: CTA's -->
-    <ng-container matColumnDef="cta">
-        <th mat-header-cell
-            *matHeaderCellDef>
-        </th>
-        <td mat-cell
-            *matCellDef="let user">
-            <div class="btn-group --compact --right">
-                <a class="btn-group__item --small"
-                   color="primary"
-                   mat-flat-button
-                   [routerLink]="['../', user.id]">
-                    Edit
+        <!-- column: Contact -->
+        <ng-container matColumnDef="contact">
+            <th mat-header-cell
+                *matHeaderCellDef>
+                Contact
+            </th>
+            <td class="u-text --compact"
+                mat-cell
+                *matCellDef="let user">
+                <a class="lnk --reverse u-block u-word --wrap u-font --small"
+                   [href]="'mailto:' + user.email">
+                    {{ user.email }}
                 </a>
-                <button class="btn-group__item --small"
-                        color="warn"
-                        disabled
-                        mat-flat-button>
-                    Remove
-                </button>
-            </div>
-        </td>
-    </ng-container>
+                <a class="lnk --reverse u-block u-word --wrap u-font --small"
+                   [href]="'tel:' + user.email">
+                    {{ user.phone }}
+                </a>
+            </td>
+        </ng-container>
 
-    <tr mat-header-row
-        *matHeaderRowDef="displayedColumns sticky: true; ">
-    </tr>
-    <tr mat-row
-        *matRowDef="let user; columns: displayedColumns; ">
-    </tr>
-</table>
+        <!-- column: CTA's -->
+        <ng-container matColumnDef="cta">
+            <th mat-header-cell
+                *matHeaderCellDef>
+            </th>
+            <td mat-cell
+                *matCellDef="let user">
+                <div class="btn-group --compact --right">
+                    <a class="btn-group__item --small"
+                       color="primary"
+                       mat-flat-button
+                       [routerLink]="['../', user.id]">
+                        Edit
+                    </a>
+                    <button class="btn-group__item --small"
+                            color="warn"
+                            disabled
+                            mat-flat-button>
+                        Remove
+                    </button>
+                </div>
+            </td>
+        </ng-container>
 
-<mat-paginator showFirstLastButtons
-               [length]="dataSource.data.length"
-               [pageSizeOptions]="[25, 50, 100]">
-</mat-paginator>
+        <tr mat-header-row
+            *matHeaderRowDef="displayedColumns sticky: true; ">
+        </tr>
+        <tr mat-row
+            *matRowDef="let user; columns: displayedColumns; ">
+        </tr>
+    </table>
+
+    <mat-paginator showFirstLastButtons
+                   [length]="dataSource.data.length"
+                   [pageSizeOptions]="[25, 50, 100]">
+    </mat-paginator>
+</div>

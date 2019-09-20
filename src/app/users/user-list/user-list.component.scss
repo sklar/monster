@@ -1,0 +1,30 @@
+/**
+ * Component User List.
+ *
+ * @requires component
+ */
+
+// @import "component";
+
+// =============================================================================
+// User List
+// =============================================================================
+
+/**
+ * Wrapper.
+ */
+
+.wrap {
+    max-height: 66vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+/**
+ * Paginator.
+ */
+
+.mat-paginator {
+    bottom: 0;
+    position: sticky;
+}
