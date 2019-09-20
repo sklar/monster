@@ -238,19 +238,6 @@
     &.--loose   { line-height: 1.8; }
 }
 
-// .u-text {
-//     $hue: 600;
-//     $theme: map-get($color, accent);
-
-//     @each $modifier, $color in $theme {
-//         @if map-has-key($color, $hue) {
-//             &.--#{$modifier} {
-//                 color: map-fetch($color, $hue);
-//             }
-//         }
-//     }
-// }
-
 .u-truncate {
     @include text-truncate;
 }

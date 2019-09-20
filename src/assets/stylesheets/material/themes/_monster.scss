@@ -25,7 +25,7 @@ $monster-primary: mat-palette($mat-teal);
 $monster-accent:  mat-palette($mat-deep-orange);
 
 // The warn palette is optional (defaults to red).
-$monster-warn:  mat-palette($mat-pink);
+$monster-warn:  mat-palette($mat-brown);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $monster-theme: mat-light-theme($monster-primary, $monster-accent, $monster-warn);
