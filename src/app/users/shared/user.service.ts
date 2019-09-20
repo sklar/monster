@@ -23,11 +23,14 @@ export class UserService {
     constructor() {
         this.users = [
             ...USERS,
-        ].reverse();
+        ];
     }
 
-    addUser(user: User) {
-        // this.users.unshift(user);
+    addUser(user: User): void {
+        this.users = [
+            ...this.users,
+            user,
+        ];
     }
 
     getUser(userId: number): User {
