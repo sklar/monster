@@ -4,7 +4,9 @@
         {{ user.firstName + ' ' + user.lastName }}
     </h2>
 
-    <app-user-form [user]="user"></app-user-form>
+    <app-user-form type="update"
+        [user]="user">
+    </app-user-form>
 
 </ng-container>
 

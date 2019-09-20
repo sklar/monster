@@ -6,6 +6,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
+    MatSortModule,
     MatTableModule,
 } from '@angular/material';
 
@@ -29,6 +30,7 @@ import { UserFormComponent } from './shared/user-form/user-form.component';
         MatInputModule,
         MatPaginatorModule,
         MatTableModule,
+        MatSortModule,
         ReactiveFormsModule,
         UserRoutingModule,
     ]

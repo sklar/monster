@@ -41,6 +41,27 @@ export class UserService {
         return this.users;
     }
 
-    removeUser() {}
+    removeUser(user: User): void {
+        const userIndex = this.getUserIndex(user);
+
+        this.users = [
+            ...this.users.slice(0, userIndex),
+            ...this.users.slice(userIndex + 1),
+        ];
+    }
+
+    updateUser(user: User): void {
+        const userIndex = this.getUserIndex(user);
+
+        this.users = [
+            ...this.users.slice(0, userIndex),
+            user,
+            ...this.users.slice(userIndex + 1),
+        ];
+    }
+
+    private getUserIndex(user: User): number {
+        return this.users.findIndex(usr => usr.id === user.id);
+    }
 
 }
