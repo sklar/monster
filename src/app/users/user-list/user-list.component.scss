@@ -4,7 +4,7 @@
  * @requires component
  */
 
-// @import "component";
+@import "component";
 
 // =============================================================================
 // User List
@@ -42,7 +42,12 @@
 
 .wrap {
     max-height: 60vh;
-    overflow-y: auto;
+    margin-bottom: rhythm-get(1);
+    min-height: 24.5rem;
+    overflow: {
+        x: hidden;
+        y: auto;
+    }
     position: relative;
 }
 
@@ -63,6 +68,7 @@
 
 .mat-paginator {
     bottom: -2px;
+    margin-right: 1px;
     padding-top: 0.5rem;
     position: sticky;
 }
