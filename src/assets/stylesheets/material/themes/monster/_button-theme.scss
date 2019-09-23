@@ -9,7 +9,7 @@
     [class*="button"] {
         flex-shrink: 0;
 
-        &:not(.mat-icon-button) {
+        &.mat-flat-button {
             min-width: 5em;
         }
 
