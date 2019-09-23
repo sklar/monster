@@ -25,7 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
         {
             provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
             useValue: {
-                duration: 5000,
+                duration: 3 * 1000,
                 verticalPosition: 'top',
             },
         }
