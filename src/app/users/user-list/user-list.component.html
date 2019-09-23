@@ -23,7 +23,8 @@
 <div class="wrap">
     <table matSort
            mat-table
-           [dataSource]="dataSource">
+           [dataSource]="dataSource"
+           [trackBy]="trackByUserId">
 
         <!-- column: Id -->
         <!-- <ng-container matColumnDef="id">

@@ -54,6 +54,10 @@ export class UserListComponent implements OnInit, AfterViewInit {
         this.update();
     }
 
+    trackByUserId(user: User, index: number) {
+        return user.id;
+    }
+
     update() {
         this.dataSource.data = this.userService.getUsers();
     }
