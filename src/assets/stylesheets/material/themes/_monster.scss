@@ -13,6 +13,7 @@
 @import "monster/dialog-theme";
 @import "monster/form-field-theme";
 @import "monster/paginator-theme";
+@import "monster/snack-bar-theme";
 @import "monster/table-theme";
 @import "monster/tooltip-theme";
 
@@ -36,13 +37,14 @@ $monster-config: mat-typography-config(
 );
 
 
-@mixin monster-material-theme() {
+@mixin monster-material-theme($theme: $monster-theme) {
 
     @include monster-button-theme();
     // @include monster-button-toggle-theme();
     @include monster-dialog-theme();
     @include monster-form-field-theme();
     @include monster-paginator-theme();
+    @include monster-snack-bar-theme();
     @include monster-table-theme();
     @include monster-tooltip-theme();
 
@@ -55,6 +57,7 @@ $monster-config: mat-typography-config(
     @include monster-dialog-typography();
     @include monster-form-field-typography();
     @include monster-paginator-typography();
+    @include monster-snack-bar-typography();
     @include monster-table-typography();
     @include monster-tooltip-typography();
 
@@ -99,7 +102,7 @@ $monster-config: mat-typography-config(
     // @include mat-toolbar-theme($theme);
     @include mat-tooltip-theme($theme);
     // @include mat-tree-theme($theme);
-    // @include mat-snack-bar-theme($theme);
+    @include mat-snack-bar-theme($theme);
 
 }
 
@@ -115,4 +118,4 @@ $monster-config: mat-typography-config(
 // =============================================================================
 
 @include monster-material-theme();
-@include monster-material-config($monster-config);
+@include monster-material-config();

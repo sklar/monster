@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 import data from './data.json';
 
@@ -20,7 +21,9 @@ export class UserService {
 
     private users: User[];
 
-    constructor() {
+    constructor(
+        private snackbar: MatSnackBar,
+    ) {
         this.users = [
             ...USERS,
         ];
@@ -31,6 +34,7 @@ export class UserService {
             ...this.users,
             user,
         ];
+        this.snackbar.open(`User ${user.firstName} ${user.lastName} created ✌`);
     }
 
     getUser(userId: number): User {
@@ -48,6 +52,7 @@ export class UserService {
             ...this.users.slice(0, userIndex),
             ...this.users.slice(userIndex + 1),
         ];
+        this.snackbar.open(`User ${user.firstName} ${user.lastName} removed ☝`);
     }
 
     updateUser(user: User): void {
@@ -58,6 +63,7 @@ export class UserService {
             user,
             ...this.users.slice(userIndex + 1),
         ];
+        this.snackbar.open(`User ${user.firstName} ${user.lastName} updated ✌`);
     }
 
     private getUserIndex(user: User): number {

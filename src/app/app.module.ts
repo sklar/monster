@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -17,9 +18,18 @@ import { AppRoutingModule } from './app-routing.module';
         AppRoutingModule,
         BrowserAnimationsModule,
         BrowserModule,
+        MatSnackBarModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
-    providers: [],
+    providers: [
+        {
+            provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+            useValue: {
+                duration: 5000,
+                verticalPosition: 'top',
+            },
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

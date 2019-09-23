@@ -29,8 +29,8 @@ import { UserFormComponent } from './shared/user-form/user-form.component';
         MatFormFieldModule,
         MatInputModule,
         MatPaginatorModule,
-        MatTableModule,
         MatSortModule,
+        MatTableModule,
         ReactiveFormsModule,
         UserRoutingModule,
     ]
