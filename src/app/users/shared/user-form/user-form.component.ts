@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User, UserService } from '../user.service';
 
 type FormTypes = 'add' | 'update';
+
 @Component({
     selector: 'app-user-form',
     templateUrl: './user-form.component.html',
@@ -43,7 +44,7 @@ export class UserFormComponent implements OnInit {
     }
 
     onSubmit(form: FormGroup) {
-        if (true || form.status === 'VALID') {
+        if (form.status === 'VALID') {
             if (this.type === 'add') {
                 this.userService.addUser(form.value);
             } else {
