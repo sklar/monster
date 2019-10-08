@@ -1,5 +1,7 @@
 # Monster [![Netlify Status](https://api.netlify.com/api/v1/badges/01f3b82f-0923-4162-91c6-2f9d1e7f6095/deploy-status)](https://app.netlify.com/sites/monster-d066d6/deploys)
 
+:point_right: [Here's the task assignment](ASSIGNMENT.md)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
 ## Development server
